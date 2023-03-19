@@ -725,6 +725,10 @@ a.btn {
   z-index: -1;
   border-radius: 20%;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
 @-moz-keyframes fadeInDown {
   0% {
     opacity: 0;
