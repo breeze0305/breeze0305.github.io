@@ -717,10 +717,10 @@ a.btn {
 .image-box:before {
   content: "";
   position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -2px;
   background-color: rgba(255,192,203,0.25); /* 降低透明度 */
   z-index: -1;
   border-radius: 20%;
