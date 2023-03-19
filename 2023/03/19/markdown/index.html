@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="微風"><title>大量的markdown語法 · 微風的私人天地</title><meta name="description" content="點進來看……
+
+
+This is intended as a quick reference and showcase. For more complete info, see John Gruber’s original spec and the Github-flavored Markdown "><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.webp"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首頁</a></li><li> <a href="/archives">檔案</a></li><li> <a href="/tags">標籤</a></li><li> <a href="/about">關於我...</a></li><li> <a href="/links">連結</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/userlogo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/userlogo.webp" style="width:220px;" alt="favicon"><h3 title=""><a href="/">微風的私人天地</a></h3><div class="description"><p>一個在師範大學讀電機的剪輯師<br>未修教育學程在補習班當老師和編講義</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/breeze0305"><i class="fa fa-github"></i></a></li><li><a href="mailto:benfeng99@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://twitter.com/Breeze0305"><i class="fa fa-twitter"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/breeze0305_edit/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/boku_kaze/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?viewas=100000686899395&amp;id=100011958690193"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" rel="noopener" href="https://discordapp.com/users/561426930671288330"><i class="fa fa-gamepad"></i></a></li><li><a target="_blank" rel="noopener" href="https://line.me/ti/p/cPsih4TELG"><i class="fa fa-id-card"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> 微風</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>大量的markdown語法</a></h3></div><div class="post-content"><p><p>點進來看……</p>
+<span id="more"></span>
+
+<p>This is intended as a quick reference and showcase. For more complete info, see <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">John Gruber’s original spec</a> and the <a target="_blank" rel="noopener" href="http://github.github.com/github-flavored-markdown/">Github-flavored Markdown info page</a>.</p>
+<p>This cheatsheet is specifically <em>Markdown Here’s</em> version of Github-flavored Markdown. This differs slightly in styling and syntax from what Github uses, so what you see below might vary a little from what you get in a <em>Markdown Here</em> email, but it should be pretty close.</p>
+<h5 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h5><p><a href="#headers">Headers</a><br><a href="#emphasis">Emphasis</a><br><a href="#lists">Lists</a><br><a href="#links">Links</a><br><a href="#images">Images</a><br><a href="#code">Code and Syntax Highlighting</a><br><a href="#blockquotes">Blockquotes</a><br><a href="#html">Inline HTML</a><br><a href="#hr">Horizontal Rule</a><br><a href="#lines">Line Breaks</a>  </p>
+<a name="headers"/>
+## Headers
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># H1</span><br><span class="line">## H2</span><br><span class="line">### H3</span><br><span class="line">#### H4</span><br><span class="line">##### H5</span><br><span class="line">###### H6</span><br><span class="line"></span><br><span class="line">Alternatively, for H1 and H2, an underline-ish style:</span><br><span class="line"></span><br><span class="line">Alt-H1</span><br><span class="line">======</span><br><span class="line"></span><br><span class="line">Alt-H2</span><br><span class="line">------</span><br></pre></td></tr></table></figure>
+
+<h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><p>Alternatively, for H1 and H2, an underline-ish style:</p>
+<h1 id="Alt-H1"><a href="#Alt-H1" class="headerlink" title="Alt-H1"></a>Alt-H1</h1><h2 id="Alt-H2"><a href="#Alt-H2" class="headerlink" title="Alt-H2"></a>Alt-H2</h2><a name="emphasis"/>
+## Emphasis
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Emphasis, aka italics, with *asterisks* or _underscores_.</span><br><span class="line"></span><br><span class="line">Strong emphasis, aka bold, with **asterisks** or __underscores__.</span><br><span class="line"></span><br><span class="line">Combined emphasis with **asterisks and _underscores_**.</span><br></pre></td></tr></table></figure>
+
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
+<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
+<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
+<a name="lists"/>
+## Lists
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. First ordered list item</span><br><span class="line">2. Another item</span><br><span class="line">  * Unordered sub-list. </span><br><span class="line">1. Actual numbers don&#x27;t matter, just that it&#x27;s a number</span><br><span class="line">  1. Ordered sub-list</span><br><span class="line">4. And another item.  </span><br><span class="line">   </span><br><span class="line">   Some text that should be aligned with the above item.</span><br><span class="line"></span><br><span class="line">* Unordered list can use asterisks</span><br><span class="line">- Or minuses</span><br><span class="line">+ Or pluses</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>First ordered list item</li>
+<li>Another item</li>
+</ol>
+<ul>
+<li>Unordered sub-list.</li>
+</ul>
+<ol>
+<li><p>Actual numbers don’t matter, just that it’s a number</p>
+</li>
+<li><p>Ordered sub-list</p>
+</li>
+<li><p>And another item.  </p>
+<p>Some text that should be aligned with the above item.</p>
+</li>
+</ol>
+<ul>
+<li>Unordered list can use asterisks</li>
+</ul>
+<ul>
+<li>Or minuses</li>
+</ul>
+<ul>
+<li>Or pluses</li>
+</ul>
+<a name="links"/>
+## Links
+
+<p>There are two ways to create links.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[I&#x27;m an inline-style link](https://www.google.com)</span><br><span class="line"></span><br><span class="line">[I&#x27;m a reference-style link][Arbitrary case-insensitive reference text]</span><br><span class="line"></span><br><span class="line">[You can use numbers for reference-style link definitions][1]</span><br><span class="line"></span><br><span class="line">Or leave it empty and use the [link text itself][]</span><br><span class="line"></span><br><span class="line">Some text to show that the reference links can follow later.</span><br><span class="line"></span><br><span class="line">[arbitrary case-insensitive reference text]: https://www.mozilla.org</span><br><span class="line">[1]: http://slashdot.org</span><br><span class="line">[link text itself]: http://www.reddit.com</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.google.com/">I’m an inline-style link</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mozilla.org/">I’m a reference-style link</a></p>
+<p><a target="_blank" rel="noopener" href="http://slashdot.org/">You can use numbers for reference-style link definitions</a></p>
+<p>Or leave it empty and use the <a target="_blank" rel="noopener" href="http://www.reddit.com/">link text itself</a></p>
+<p>Some text to show that the reference links can follow later.</p>
+<a name="images"/>
+## Images
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Here&#x27;s our logo (hover to see the title text):</span><br><span class="line"></span><br><span class="line">Inline-style: </span><br><span class="line">![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png &quot;Logo Title Text 1&quot;)</span><br><span class="line"></span><br><span class="line">Reference-style: </span><br><span class="line">![alt text][logo]</span><br><span class="line"></span><br><span class="line">[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png &quot;Logo Title Text 2&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Here’s our logo (hover to see the title text):</p>
+<p>Inline-style:<br><img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1"></p>
+<p>Reference-style:<br><img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 2"></p>
+<a name="code"/>
+## Code and Syntax Highlighting
+
+<p>Code blocks are part of the Markdown spec, but syntax highlighting isn’t. However, many renderers – like Github’s and <em>Markdown Here</em> – support syntax highlighting. <em>Markdown Here</em> supports highlighting for dozens of languages (and not-really-languages, like diffs and HTTP headers); to see the complete list, and how to write the language names, see the <a target="_blank" rel="noopener" href="http://softwaremaniacs.org/media/soft/highlight/test.html">highlight.js demo page</a>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Inline `code` has `back-ticks around` it.</span><br></pre></td></tr></table></figure>
+
+<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
+<p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks – they’re easier and only they support syntax highlighting.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```javascript</span><br><span class="line">var s = &quot;JavaScript syntax highlighting&quot;;</span><br><span class="line">alert(s);</span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Python syntax highlighting&quot;</span></span><br><span class="line"><span class="built_in">print</span> s</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">No language indicated, so no syntax highlighting. </span><br><span class="line">But let&#x27;s throw in a &lt;b&gt;tag&lt;/b&gt;.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```javascript</span><br><span class="line">var s = &quot;JavaScript syntax highlighting&quot;;</span><br><span class="line">alert(s);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Python syntax highlighting&quot;</span></span><br><span class="line"><span class="built_in">print</span> s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">No language indicated, so no syntax highlighting in Markdown Here (varies on Github). </span><br><span class="line">But let&#x27;s throw in a &lt;b&gt;tag&lt;/b&gt;.</span><br></pre></td></tr></table></figure>
+
+<p>(Github Wiki pages don’t seem to support syntax highlighting, so the above won’t be colourful (the strings are not red, for example). Try it out in a <em>Markdown Here</em> email or a Github Markdown README or Github Issue – you can preview a new Issue without submitting it.)</p>
+<p>Again, to see what languages are available for highlighting, and how to write those language names, see the <a target="_blank" rel="noopener" href="http://softwaremaniacs.org/media/soft/highlight/test.html">highlight.js demo page</a>.</p>
+<a name="blockquotes"/>
+## Blockquotes
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; Blockquotes are very handy in email to emulate reply text.</span><br><span class="line">&gt; This line is part of the same quote.</span><br><span class="line"></span><br><span class="line">Quote break.</span><br><span class="line"></span><br><span class="line">&gt; This is a very long line that will still be quoted properly when it wraps. Oh boy let&#x27;s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Blockquotes are very handy in email to emulate reply text.<br>This line is part of the same quote.</p>
+</blockquote>
+<p>Quote break.</p>
+<blockquote>
+<p>This is a very long line that will still be quoted properly when it wraps. Oh boy let’s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote. </p>
+</blockquote>
+<a name="html"/>
+## Inline HTML
+
+<p>You can also use raw HTML in your Markdown, and it’ll mostly work pretty well. Here are a couple of common examples:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">  &lt;dt&gt;Definition list&lt;/dt&gt;</span><br><span class="line">  &lt;dd&gt;Is something people use sometimes.&lt;/dd&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dt&gt;Markdown in HTML&lt;/dt&gt;</span><br><span class="line">  &lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;Tables&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;Are&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;Cool&lt;/th&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;Zebra&lt;/th&gt;</span><br><span class="line">    &lt;td&gt;Stripes&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;Are&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;Pretty&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;Here&lt;/th&gt;</span><br><span class="line">    &lt;td&gt;Is&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;Another&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;Row&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
+<dl>
+  <dt>Definition list</dt>
+  <dd>Is something people use sometimes.</dd>
+
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Tables</th>
+    <th>Are</th>
+    <th>Cool</th>
+  </tr>
+  <tr>
+    <th>Zebra</th>
+    <td>Stripes</td>
+    <td>Are</td>
+    <td>Pretty</td>
+  </tr>
+  <tr>
+    <th>Here</th>
+    <td>Is</td>
+    <td>Another</td>
+    <td>Row</td>
+  </tr>
+</table>
+
+<p>Github-flavored Markdown supports a special table syntax, but <em>Markdown Here</em> does not support it yet. <a target="_blank" rel="noopener" href="https://github.com/adam-p/markdown-here/issues/13">There’s an issue for it.</a></p>
+<a name="hr"/>
+## Horizontal Rule
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Three or more...</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">Hyphens</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">Asterisks</span><br><span class="line"></span><br><span class="line">___</span><br><span class="line"></span><br><span class="line">Underscores</span><br></pre></td></tr></table></figure>
+
+<p>Three or more…</p>
+<hr>
+<p>Hyphens</p>
+<hr>
+<p>Asterisks</p>
+<hr>
+<p>Underscores</p>
+<a name="lines"/>
+## Line Breaks
+
+<p>My basic recommendation for learning how line breaks work is to experiment and discover – hit &lt;Enter&gt; once, then hit it twice, see what happens. You’ll soon learn to get what you want. “Markdown Toggle” is your friend. </p>
+<p>Here are some things to try out:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">With only a single newline, this line and</span><br><span class="line">this line will be a *single line*.</span><br><span class="line"></span><br><span class="line">But this one is separated by two newlines and so will be a *separate paragraph*.</span><br><span class="line"></span><br><span class="line">This line has two spaces at the end (hard for you to see, but trust me!).  </span><br><span class="line">So this is a separate line in the *same paragraph*.</span><br></pre></td></tr></table></figure>
+
+<p>With only a single newline, this line and<br>this line will be a <em>single line</em>.</p>
+<p>But this one is separated by two newlines and so will be a <em>separate paragraph</em>.</p>
+<p>This line has two spaces at the end (hard for you to see, but trust me!).<br>So this is a separate line in the <em>same paragraph</em>.</p>
+</p><div class="tip"><br>作者: 微風</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-03-19</span><a class="tag" href="/categories/網頁/" title="網頁">網頁 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Hexo/" title="Hexo">Hexo </a><span class="leancloud_visitors"></span><span>大約1286個字, 4分鐘17秒讀完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/03/19/markdown/,微風的私人天地,大量的markdown語法,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/03/19/%E5%AF%A6%E6%B3%81%E4%B8%BB/" title="實況主們">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/03/19/Hexo/" title="Hexo">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(無標題)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要搜尋什麼..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
