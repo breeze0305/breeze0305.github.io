@@ -706,7 +706,7 @@ a.btn {
 .image-box {
   position: relative;
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
 }
 .image-box img {
   width: 50px;
@@ -720,7 +720,7 @@ a.btn {
   top: -7px;
   left: -7px;
   right: -7px;
-  bottom: -2px;
+  bottom: -1px;
   background-color: rgba(255,192,203,0.25); /* 降低透明度 */
   z-index: -1;
   border-radius: 20%;
