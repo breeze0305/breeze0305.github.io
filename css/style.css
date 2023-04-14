@@ -729,6 +729,15 @@ img {
   max-width: 100%;
   height: auto;
 }
+.copy-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 2px 5px;
+}
 @-moz-keyframes fadeInDown {
   0% {
     opacity: 0;
