@@ -738,6 +738,18 @@ img {
   margin-top: 5px;
   padding: 2px 5px;
 }
+.copy-btn {
+  background-color: #f7f7f7;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  color: #24292e;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 10px 0;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+}
 @-moz-keyframes fadeInDown {
   0% {
     opacity: 0;
