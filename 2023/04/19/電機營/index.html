@@ -5,10 +5,11 @@
         margin: 10px 0;
         paddin"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/image0.gif"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="/js/clipboard.min.js"></script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首頁</a></li><li> <a href="/archives">檔案</a></li><li> <a href="/tags">標籤</a></li><li> <a href="/about">關於我...</a></li><li> <a href="/Artwork">作品</a></li><li> <a href="/update">更新日誌</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/userlogo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/userlogo.webp" style="width:220px;" alt="favicon"><h3 title=""><a href="/">微風</a></h3><div class="description"><p>一個在師範大學讀電機的剪輯師<br>未修教育學程在補習班當老師和編講義</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/breeze0305"><i class="fa fa-github"></i></a></li><li><a href="mailto:benfeng99@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://twitter.com/Breeze0305"><i class="fa fa-twitter"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/breeze0305_edit/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/boku_kaze/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?viewas=100000686899395&amp;id=100011958690193"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" rel="noopener" href="https://discordapp.com/users/561426930671288330"><i class="fa fa-gamepad"></i></a></li><li><a target="_blank" rel="noopener" href="https://line.me/ti/p/cPsih4TELG"><i class="fa fa-id-card"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> 微風</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div><script src="/js/copy-code.js"></script></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>電機營</a></h3></div><div class="post-content"><p><br>
 <span id="more"></span>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- stlye 標籤 -->
+
 <style>
-.outer-gray-bg {
+    .outer-gray-bg {
         background-color: #f2f2f2;
         border: 1px solid #ddd;
         border-radius: 5px;
@@ -32,8 +33,55 @@
 
     .gray-bg:nth-child(4) li:nth-child(-n+3) {color: red;}
 
+    .outer-lightblue-bg {
+        background-color: #e0f7ff;
+        border: 1px solid #b3daff;
+        border-radius: 10px;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .lightblue-bg {
+        margin: 0;
+        padding: 0;
+    }
+
+    .lightblue-bg p, .lightblue-bg ul {
+        margin: 0;
+        padding: 0;
+    }
+    
 </style>
 <!-- stlye 標籤 -->
+<!-- script 標籤 -->
+<script>
+$(document).ready(function() {$(".photo-container").each(function() {var container = $(this);
+    var photos = container.find(".photo");
+    var currentIndex = 0;
+
+    function showPhoto(index) {photos.hide();
+      photos.eq(index).show();
+      container.find(".image-counter").text("第" + (index + 1) + "張");
+    }
+
+    showPhoto(currentIndex);
+
+    container.find(".prev-button").click(function() {
+      currentIndex--;
+      if (currentIndex < 0) {currentIndex = photos.length - 1;}
+      showPhoto(currentIndex);
+    });
+
+    container.find(".next-button").click(function() {
+      currentIndex++;
+      if (currentIndex>= photos.length) {currentIndex = 0;}
+      showPhoto(currentIndex);
+    });
+  });
+});
+
+</script>
+<!-- script 標籤 -->
 
 <blockquote>
 <p>如果你已經看到這裡了, 就代表你有打算接任器攝股或者已經是器攝股的股長或股員了, 那接下來的東西我相信一定對你有幫助</p>
@@ -96,12 +144,17 @@
 <p style="color: red; font-size: 18px;">可以想像, 但絕不是欺騙</p>
 
 <p>1. 面對工作內容必須誠實<br>2. 應該詳細講解攝器股, 而不是讓學弟妹猜測工作內容<br>3. 講解詳細的練習流程, 練習時長與頻率<br>4. 講解器攝股在電機營上所擔任的角色<br>5. 告訴學生活動舉辦的暫定日期, 確保寒暑假可以待在台北進行營隊與培訓(需申請寒暑宿, 除非家裡住在台北, 可以方便通勤, 上營期間離開活動會場約為晚上 11、12 點, 請確保有交通工具可以回家, 否則一律強迫住宿)</p>
-<div style="text-align: center;">
-    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098501724823617586/1.jpg" alt="圖片描述" style="max-width: 100%; height: auto;">
-    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098501725083672606/2.jpg" alt="圖片描述" style="max-width: 100%; height: auto;">
-    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098501725469540402/3.jpg" alt="圖片描述" style="max-width: 100%; height: auto;">
+<div class="photo-container">
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098501724823617586/1.jpg" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098501725083672606/2.jpg" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098501725469540402/3.jpg" class="photo" />
+  <!-- 更多照片... -->
+  <span class="image-counter"></span>
+  <button class="prev-button">上一張</button>
+  <button class="next-button">下一張</button>
 </div>
-***
+
+<hr>
 <a name="Interview"/>
 
 <h1 id="面試"><a href="# 面試" class="headerlink" title="面試"></a>面試</h1><blockquote>
@@ -160,10 +213,10 @@
 <h1 id="預算"><a href="# 預算" class="headerlink" title="預算"></a>預算</h1><blockquote>
 <p>「直銷培訓企劃」</p>
 </blockquote>
-<p>1. 開始籌列電機營預算表, 總共分成「培訓營預算會」「培訓營結算會」「正式營預算會」「正式營結算會」<br>2. 培訓營為獨立於電機營之活動, 所以預算與結算要獨立開會, 練習如何開預算會 <br>3. 請將培訓營是為簡易版之正式營, 所需物品請參考<a href="#TrainingCamp"> 培訓營 </a> 當天流程安排 <br>4. 營隊期間所需的消耗品皆在營隊預算會開立項目, 大型機具(如: 相機、投影機、Macbook pro、Mixer、iPhone 14 Pro Max、大砲鏡頭、記憶卡、音箱、閃光燈、空拍機、對講機) 請在年度預算會做申請 <br>5. 所有所需項目皆需要在預算會前確認好「 <strong> 數量 </strong> 」與「 <strong> 金額 </strong> 」, 因為必須統計預算訂定營隊門票錢, 避免活動虧錢, 如緊急物品(如: 電池突然用完, 音源線突然不能用, 電光膠布不夠) 則可在所需時向財務部報備, 口頭得到會代會同意後, 即可購買</p>
-<p><strong>6. 某些網購平台打統編需加收 5% 金額, 請在開立預算前是先確認可否開立「發票 / 收據」</strong></p>
-<p><strong>7. 須注意開立所有預算須打統編，無法打統編之物品，無法請款，需自行吸收</strong></p>
-<p><strong>8. 師大統編:03735202</strong></p>
+<p>1. 開始籌列電機營預算表, 總共分成「培訓營預算會」「培訓營結算會」「正式營預算會」「正式營結算會」<br>2. 培訓營為獨立於電機營之活動, 所以預算與結算要獨立開會, 練習如何開預算會 <br>3. 請將培訓營是為簡易版之正式營, 所需物品請參考<a href="#TrainingCamp"> 培訓營 </a> 當天流程安排 <br>4. 營隊期間所需的消耗品皆在營隊預算會開立項目, 大型機具(如: 相機、投影機、Macbook pro、Mixer、iPhone 14 Pro Max、大砲鏡頭、記憶卡、音箱、閃光燈、空拍機、對講機) 請在年度預算會做申請 <br>5. 所有所需項目皆需要在預算會前確認好「 <strong> 數量 </strong> 」與「 <strong> 金額 </strong> 」, 因為必須統計預算訂定營隊門票錢, 避免活動虧錢, 如緊急物品(如: 電池突然用完, 音源線突然不能用, 電光膠布不夠) 則可在所需時向財務部報備, 口頭得到會代會同意後, 即可購買<br>6. 網購需考量運費成本, 運費必須獨立開立在預算內</p>
+<p><strong>7. 某些網購平台打統編需加收 5% 金額, 請在開立預算前是先確認可否開立「發票 / 收據」</strong></p>
+<p><strong>8. 須注意開立所有預算須打統編，無法打統編之物品，無法請款，需自行吸收</strong></p>
+<p><strong>9. 師大統編:03735202</strong></p>
 
 <div class="outer-gray-bg">
   <div class="gray-bg">
@@ -171,7 +224,9 @@
     <ul class="no-bullets">
       <li>電池: 培訓營與正式營的預算會分開開立 =>120 顆(半天換一次 / 一支麥克風兩顆 / 培訓營兩支正式營四支)</li>
       <li>布膠帶: 培訓 2 捲、正式(需考量練習使用量 + 一驗 + 二驗 + 行前 + 內驗 + 正式)10 捲</li>
-      <li>電光膠布: 培訓 5 捲、正式 18 捲</li>      
+      <li>電光膠布: 培訓 5 捲、正式 18 捲</li>
+      <li>鹵素燈管: 地燈台座 *1.5 倍</li>
+      <li>購買:<a target="_blank" rel="noopener" href="https://goo.gl/maps/XQWrf3ojGQNrqBec8">金興發 </a>、<a target="_blank" rel="noopener" href="https://24h.pchome.com.tw/">pchome</a>、<a target="_blank" rel="noopener" href="https://shopee.tw/"> 蝦皮 </a>、<a target="_blank" rel="noopener" href="https://goo.gl/maps/tGMAaQKzP7rQ8PUM8"> 今華電子(光華商場 - 鹵素燈管)</a></li>      
     </ul>
   </div>
 
@@ -200,7 +255,232 @@
 <h1 id="基本技巧練習"><a href="# 基本技巧練習" class="headerlink" title="基本技巧練習"></a>基本技巧練習</h1><blockquote>
 <p>「就算是笨蛋也要給我教會他」</p>
 </blockquote>
-<p>1. 四大技能: 剪片、拍照、配樂(習慣叫配器)、器材</p>
+<div>
+1. 四大技能: 剪片、拍照、配樂(習慣叫配器)、器材
+</div>
+<div>
+2. 在培訓營前會有 (4~6 次的股練時間; 二到三個禮拜), 時間分配為 -> 剪片 (1 天)+ 拍照(1 天)+ 器材(2 天){+ 驗收剪片練習(1 天)+ 錄影練習(1 天)}-> 可有可無
+</div>
+<div>
+3. 時間不夠的話, 驗收剪片改成股長線上驗收錄影改進心得, 貼給學員自己看, 錄影練習跟拍照一起
+</div>
+<div>
+4. 建議剪片可以第一個禮拜先教, 教完後在培訓營前請大家剪出一支 3~4 分鐘的回顧片(1 首歌), 時間充足就排一次股練大家一起看並講解優缺點, 股練時間不夠就照上面的做, 請學生衡量剪片所需時長(正常時間應為 6 個小時內 - 包含挑素材與剪輯, 除非他弄得很精緻)
+</div>
+<div>
+5. 驗收完剪片, 請跟另一個股長討論, 決定培訓營剪片者, 記得告訴股員此選擇並不是最終決定
+</div>
+
+<br>
+<!-- 剪片籃框 + 剪片培訓 ppt 輪播 -->
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p><strong>剪片</strong></p>
+    <ul class="no-bullets">
+        <li>剪輯軟體推薦:<a target="_blank" rel="noopener" href="https://www.adobe.com/tw/products/premiere.html?gclid=Cj0KCQjwxYOiBhC9ARIsANiEIfbAmq4Oye79k4sf5yecq4Guz4PVhHVMmMFVN2IVz-Xepr71tWV_-48aAhUKEALw_wcB&sdid=MC95SQKG&mv=search&ef_id=Cj0KCQjwxYOiBhC9ARIsANiEIfbAmq4Oye79k4sf5yecq4Guz4PVhHVMmMFVN2IVz-Xepr71tWV_-48aAhUKEALw_wcB:G:s&s_kwcid=AL!3085!3!400486556147!e!!g!!adobe%20premiere%20pro!95674759!4065388999">adobe premiere pro</a>、<a target="_blank" rel="noopener" href="https://www.blackmagicdesign.com/products/davinciresolve">DaVinci Resolve</a>、<a target="_blank" rel="noopener" href="https://www.capcut.cn/">剪映</a></li>
+        <li>影片導出格式:1920*1080_VBR:12mbps~10mbps_最佳化選染_h.264_mp4</li>
+        <li>教學影片請參考 <a href="#AdditionalResources"> 額外資源</a></li>
+        <li>請學生截圖電腦工作管理員 CPU+ 記憶體 + 顯卡, 確認有沒有學生剪不了片的, 電腦很爛的要考慮之後就不要讓他剪片了</li>
+        <li>禁止使用奇怪的音樂, 亂剪的, 沒用心剪的,<b><span style="color:red">直接踢除電機營</span></b>。</li>
+    </u1>
+  </div>
+</div>
+<br>
+
+<h2 id="教學 ppt"><a href="# 教學 ppt" class="headerlink" title="教學 ppt"></a>教學 ppt</h2><div class="photo-container">
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857542760796250/1.JPG?width=1968&height=1108" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857542991495229/2.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857543217983498/3.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857543448662036/4.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857543675166762/5.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857543893266493/6.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857544115556402/7.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857544333672478/8.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857544560160798/9.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098857544799227964/10.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860349937172548/11.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860350176231575/12.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860350402736158/13.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860350629232680/14.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860350851514418/15.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860351111573566/16.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860351417745528/17.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860349110894672/18.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860349446422598/19.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098860349698093166/20.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861277289402468/21.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861277603954688/22.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861277868199946/23.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861278149234739/24.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861278828691476/25.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861279231348746/26.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861279520755812/27.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861279852122122/28.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861280397365400/29.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861276995784744/30.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861745302421604/31.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861745520521256/32.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861745772175420/33.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861746002870322/34.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861746258718750/35.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861746476818473/36.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861746686541834/37.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861746929807401/38.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861747139518484/39.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098861745101086730/40.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862088060948480/41.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862088266453032/42.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862088497135646/43.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862088690094110/44.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862088912375858/45.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862089122086912/46.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862089348599939/47.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862089549910016/48.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862089788981268/49.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862087779909652/50.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862336908992543/51.JPG?width=1518&height=854" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098862337257115739/52.JPG?width=1518&height=854" class="photo" />
+ <!-- 更多照片... -->
+  <span class="image-counter"></span>
+  <button class="prev-button">上一張</button>
+  <button class="next-button">下一張</button>
+</div>
+
+<p>ppt 內容提及影片:<a target="_blank" rel="noopener" href="https://youtu.be/v0YX0qLDvDE">page49: 選課影片</a>、<a target="_blank" rel="noopener" href="https://youtu.be/PlBFNU_kP3I">page51: 第三屆電機營早報</a><br><br></p>
+<!-- 錄影拍攝 + 培訓 ppt -->
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p><strong>拍照 and 拍攝</strong></p>
+    <ul class="no-bullets">
+        <li>系學會相機:nikon_z50(+rode 有線麥克風)、canon EOS</li>
+        <li>後製軟體:adobe photoshop 2021、adobe lightroom 2021</li>
+        <li>拍攝格式:jpg+raw(需要調色再使用 RAW 檔)</li>
+        <li>錄影格式:1920*1080p 60</li>
+    </u1>
+  </div>
+</div>
+<br>
+
+<h2 id="拍照教學 ppt"><a href="# 拍照教學 ppt" class="headerlink" title="拍照教學 ppt"></a>拍照教學 ppt</h2><div class="photo-container">
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910636215373834/1.JPG?width=1968&height=1108" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910636437676072/2.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910636680941628/3.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910636961964083/4.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910637280739369/5.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910637586915362/6.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910637817610271/7.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910638077644860/8.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910635594620989/9.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098910635984699393/10.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911093419675680/11.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911093721661521/12.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911094187233281/13.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911094493413476/14.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911094753472562/15.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911095021899797/16.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911095265177700/17.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911095600713879/18.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911095873351731/19.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911096250830869/20.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911486618902618/21.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911486883147836/22.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911487168352307/23.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911487428403270/24.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911487751368704/25.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911488003022918/26.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911488296628306/27.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911485889089586/28.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911486136557629/29.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098911486367248524/30.JPG?width=1518&height=854" class="photo" />
+    <!-- 更多照片... -->
+    <span class="image-counter"></span>
+    <button class="prev-button">上一張</button>
+    <button class="next-button">下一張</button>
+</div>
+ppt 內容提及影片:<a target="_blank" rel="noopener" href="https://www.instagram.com/tw_cf_photo/">馮楷宸學長 IG</a>、<a target="_blank" rel="noopener" href="https://youtu.be/CmjeCchGRQo">page8:Inside a Camera at 10,000fps - The Slow Mo Guys</a>
+
+<br>
+
+<h2 id="錄影教學 ppt"><a href="# 錄影教學 ppt" class="headerlink" title="錄影教學 ppt"></a>錄影教學 ppt</h2><div class="photo-container">
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883384337514536/1.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883384580776028/2.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883384794689687/3.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883385008603176/4.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883382613651588/5.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883382903062588/6.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883383163101264/7.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883383406374962/8.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883383632871514/9.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883384035520522/10.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883889201684613/11.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883889491103744/12.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883889734369350/13.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883890095071322/14.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883890334158858/15.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883890569035826/16.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883890829086842/17.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883891076546600/18.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883891403694090/19.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098883888895508490/20.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098884179049058334/21.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098884177992093796/22.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098884178310865028/23.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098884178558324767/24.JPG?width=1518&height=854" class="photo" />
+    <img src="https://media.discordapp.net/attachments/1096846651697659934/1098884178793213973/25.JPG?width=1518&height=854" class="photo" />
+    <!-- 更多照片... -->
+    <span class="image-counter"></span>
+    <button class="prev-button">上一張</button>
+    <button class="next-button">下一張</button>
+</div>
+ppt 內容提及影片:<a target="_blank" rel="noopener" href="https://youtu.be/B6amlXKu41w?t=238">page10: 快門太慢</a>、<a target="_blank" rel="noopener" href="https://youtu.be/oenC2DeIfHE?t=167">page10: 快門太快 + 快門適中</a>、<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=gzNEIM2Owwo">page13: 穩定性很重要</a>、<a target="_blank" rel="noopener" href="https://youtu.be/gifkMh1V8UQ">page15: 機內轉場</a>、<a target="_blank" rel="noopener" href="https://youtu.be/1HxP2OtC5b0?t=25">page20: 構圖</a>
+
+<br>
+<!-- 配器 -->
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p><strong>配器</strong></p>
+    <ul class="no-bullets">
+        <li>使用軟體:Virtual DJ(DJ 台)、adobe audition(調整聲音大小)</li>
+        <li>熟悉每首歌曲的絕對音量</li>
+        <li>記得先裁切音源, 不要用哪種 youtuber 100 音效包, 如果不小心播錯你會被幹到起飛</li>
+        <li>key point: 配樂要淡入淡出, 音效直出。記得確認電腦的音源輸出是否為喇叭</li>
+    </u1>
+  </div>
+</div>
+<br>
+<!-- 器材練習 -->
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p><strong>器材</strong></p>
+    <ul class="no-bullets">
+        <li>地燈: 倉庫有四個鹵素地燈(黃光)+ 兩個 LED(白光), 晚會表演使用, 要對稱, 一個延長線最多接三個地燈(建議直接購買可變 LED 地燈, 早該換了, 白癡會代)</li>
+        <li>spotlight: 跟學校做租借, 不用錢, 平時可以借來練習, 只有行前營與正式營需要, 驗收用簡易手電筒代替即可。練習如何架設聚光燈(單人架設)</li>
+        <li>布膠帶、電光膠布: 練習快速貼線, 盡量不要走曲線, 請走直角, 長直線直接用布膠帶貼比較快, 小地方用電光膠布, 貼線記得包下去, 線材才不會晃動, 手撕電光膠布跟布膠帶要練, 上營沒人在拿剪刀的, 很蠢</li>
+        <li>相機腳架: 練習從袋子中拿出來快速拆裝, 快速收納</li>
+        <li>投影機: 練習快速架設, 調平, 梯形修正</li>
+        <li>音箱與麥克風搭配: 調整 mic 大小聲, 背景音樂與人聲比例, 串連兩台 mipro 音箱(注意音箱散熱與電源是否正確接上)</li>
+        <li>Mixer: 就混音盤, 自己在行前營時摸摸看怎麼用, 不會用就去 google</li>
+        <li>一對四無線麥克風: 表演者會有小蜜蜂接到口袋的發射器，音控台會有一台一收四的大型接收器，可以轉出四路 XLR（記得跟器材老闆拿 2XLRx2，不要問，問就是 <b><a target="_blank" rel="noopener" href="https://media.discordapp.net/attachments/1096846651697659934/1098908651705602058/image.png?width=780&height=1106"> 教訓</a></b>），請接到 mixer 上加上電腦音效混出一軌接音箱。</li>
+    </u1>
+  </div>
+</div>
+<br>
+
+<h2 id="師大學校系統租借"><a href="# 師大學校系統租借" class="headerlink" title="師大學校系統租借"></a>師大學校系統租借</h2><div class="photo-container">
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098898037297909820/E799BBE8A898E7AF87-1024x576.png?width=1968&height=1108" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098898070068006942/E9A098E58F96E7AF87-1024x576.png?width=1968&height=1108" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098898102573879417/E6ADB8E98284E7AF87-1024x576.png?width=1968&height=1108" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098898464173215754/image.png?width=2104&height=1108" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098898777961672754/image.png?width=2160&height=1094" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098898828201033798/image.png?width=1776&height=494" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098899111001993256/image.png?width=2160&height=1092" class="photo" />
+  <img src="https://media.discordapp.net/attachments/1096846651697659934/1098899461264134204/image.png?width=2082&height=1108" class="photo" />
+  <!-- 更多照片... -->
+  <span class="image-counter"></span>
+  <button class="prev-button">上一張</button>
+  <button class="next-button">下一張</button>
+</div>
+
 <hr>
 <a name="TrainingCamp"/>
 
@@ -216,7 +496,93 @@
 <h1 id="上工"><a href="# 上工" class="headerlink" title="上工"></a>上工</h1><hr>
 <a name="AdditionalResources"/>
 
-<h1 id="額外資源"><a href="# 額外資源" class="headerlink" title="額外資源"></a>額外資源</h1><br>
+<h1 id="額外資源"><a href="# 額外資源" class="headerlink" title="額外資源"></a>額外資源</h1><div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <a target="_blank" rel="noopener" href="https://misterhorse.com/animation-composer"><p>免費轉場插件 for prremiere pro</p></a>
+  </div>
+</div>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【通用教學 - 影片碼率】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hqNcj6_lYg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【通用教學 - 賀仁回顧片講評 + 調色教學】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d7lJL0AQbOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【通用教學 - 回顧片練習要點 + 複習 pr 操作】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aO8yQ3ui7Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【通用教學 - 簡易轉場】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CQ6ez5LBDec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【通用教學 - 檔案分類 + 簡易調色】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iAGc6agzJfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【PR 教學 -premiere 基礎教學】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WTHI4VhoyDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【PR 教學 -flow frames 插幀和 premiere 專案檔打包技巧】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w80clevSxO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【PR/AE 教學 - 影片去被】</p>
+  </div>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7Jer-s5FpyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【成品欣賞 - 第五屆電機營早報 1、2、3-- 馮柏勳】</p>
+  </div>
+</div>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dVqtI5XF-zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
+<div class="outer-lightblue-bg">
+  <div class="lightblue-bg">
+    <p>【成品欣賞 - 第五屆電機營回顧片 -- 吳祐安】</p>
+  </div>
+</div>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rWxaxIo18PQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p><br><br></p>
 <center><img src="/images/image0.gif" width = ""height =""></center>
 
 
@@ -225,4 +591,4 @@
 
 
 
-</p><div class="tip"><br>作者: 微風</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-19</span><a class="tag" href="/categories/電機營/" title="電機營">電機營 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/電機營/" title="電機營">電機營 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/營隊/" title="營隊">營隊 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/台師範/" title="台師範">台師範 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/器攝/" title="器攝">器攝 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/傳承/" title="傳承">傳承 </a><span class="leancloud_visitors"></span><span>大約3172個字, 10分鐘34秒讀完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/17/midtest_hide/" title="大數據期中考">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><!-- 在這裡插入代碼--><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(無標題)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要搜尋什麼..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</p><div class="tip"><br>作者: 微風</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-19</span><a class="tag" href="/categories/電機營/" title="電機營">電機營 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/電機營/" title="電機營">電機營 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/營隊/" title="營隊">營隊 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/台師範/" title="台師範">台師範 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/器攝/" title="器攝">器攝 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/傳承/" title="傳承">傳承 </a><span class="leancloud_visitors"></span><span>大約4544個字, 15分鐘8秒讀完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/19/test_hide/" title="TTT">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/17/midtest_hide/" title="大數據期中考">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><!-- 在這裡插入代碼--><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(無標題)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要搜尋什麼..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

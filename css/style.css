@@ -750,6 +750,56 @@ img {
   text-align: center;
   display: inline-block;
 }
+.photo-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 1920px;
+}
+.photo {
+  display: none;
+  width: 100%;
+}
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.photo-container:hover .prev-button,
+.photo-container:hover .next-button {
+  opacity: 1;
+}
+.prev-button {
+  left: 0;
+}
+.next-button {
+  right: 0;
+}
+.image-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.photo-container:hover .image-counter {
+  opacity: 1;
+}
 @-moz-keyframes fadeInDown {
   0% {
     opacity: 0;
