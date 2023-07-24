@@ -779,6 +779,15 @@ img {
 .photo-container:hover .image-counter {
   opacity: 1;
 }
+/* code block編輯區 */
+pre {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 10px;
+  white-space: pre-wrap; /* 保留空白和換行 */
+  word-wrap: break-word; /* 斷詞換行 */
+  border-radius: 5px; /* 添加5px的圆角 */
+}
 @-moz-keyframes fadeInDown {
   0% {
     opacity: 0;
