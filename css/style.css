@@ -788,6 +788,13 @@ pre {
   word-wrap: break-word; /* 斷詞換行 */
   border-radius: 5px; /* 添加5px的圆角 */
 }
+/* 作品集中的標題css */
+.bold-italic {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 24px; /* 調整字體大小，您可以根據需要調整數值 */
+  color: #4786d6; /* 設定文字顏色為 #4786D6（藍色） */
+}
 @-moz-keyframes fadeInDown {
   0% {
     opacity: 0;
