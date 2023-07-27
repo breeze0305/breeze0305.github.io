@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="zh-CN"><head><!-- Google Analytics Tracking Code--><script async src="https://www.googletagmanager.com/gtag/js?id=G-8FN9LPZ6K5"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-8FN9LPZ6K5');
+</script><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="微風"><title>ML-Dateset&DataLoader · 微風</title><meta name="description" content="@font-face {
+  font-family: 'jf-openhuninn';
+  src: url('/source/fonts/jf-openhuninn-1.1.ttf') format('truetype');
+}
+* {box-sizing: border-box;}
+
+.con"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/image0.gif"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="/js/clipboard.min.js"></script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首頁</a></li><li> <a href="/archives">檔案</a></li><li> <a href="/tags">標籤</a></li><li> <a href="/about">關於我...</a></li><li> <a href="/Artwork">作品</a></li><li> <a href="/update">更新日誌</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/userlogo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/userlogo.webp" style="width:220px;" alt="favicon"><h3 title=""><a href="/">微風</a></h3><div class="description"><p>一個在師範大學讀電機的剪輯師<br>未修教育學程在補習班當老師和編講義</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/breeze0305"><i class="fa fa-github"></i></a></li><li><a href="mailto:benfeng99@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://twitter.com/Breeze0305"><i class="fa fa-twitter"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/breeze0305_edit/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/boku_kaze/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?viewas=100000686899395&amp;id=100011958690193"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" rel="noopener" href="https://discordapp.com/users/561426930671288330"><i class="fa fa-gamepad"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> 微風</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div><script src="/js/copy-code.js"></script></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>ML-Dateset&amp;DataLoader</a></h3></div><div class="post-content"><p><br>
+<span id="more"></span>
+
+<style>
+@font-face {
+  font-family: 'jf-openhuninn';
+  src: url('/source/fonts/jf-openhuninn-1.1.ttf') format('truetype');
+}
+* {box-sizing: border-box;}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  background-color: #ddd; /* light gray */
+  height: 50px; /* adjust this value as needed */
+  font-weight: bold; /* make the text bold */
+  font-size: 18px; /* adjust this value as needed */
+}
+
+.text-container {
+  border: none;
+  padding: 20px; /* adjust this value as needed to create space around the text */
+  margin-top: 0; /* remove the space above the text box */
+  width: 100%;
+  height: 200px; /* adjust this value as needed */
+  overflow-y: auto; /* add a scrollbar if the content is too long */
+  background-color: #ccc; /* dark gray */
+  line-height: 2; /* adjust this value as needed to change the line spacing */
+  font-family: 'jf-openhuninn';
+}
+
+.active {background-color: #ccc; /* dark gray */}
+</style>
+
+<h2 id="pre-install"><a href="#pre-install" class="headerlink" title="pre install"></a>pre install</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install torch</span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install pandas</span><br><span class="line">pip install torchvision</span><br></pre></td></tr></table></figure>
+
+<div class="container">
+  <div class="button-container">
+    <button class="button active" id="btn1" onclick="changeText(1)">PyTorch</button>
+    <button class="button" id="btn2" onclick="changeText(2)">OpenCV (cv2)</button>
+    <button class="button" id="btn3" onclick="changeText(3)">pandas</button>
+    <button class="button" id="btn4" onclick="changeText(4)">torchvision</button>
+  </div>
+
+  <div class="text-container" id="textContainer">
+    PyTorch is a powerful deep learning framework that offers many tools and libraries to simplify the process of model creation and training. Its advantages include dynamic computation graphs, an easy-to-use API, and a vibrant community support. To install PyTorch, we can use the following pip command:
+  </div>
+</div>
+
+<script>
+var texts = [
+  'PyTorch is a powerful deep learning framework that offers many tools and libraries to simplify the process of model creation and training. Its advantages include dynamic computation graphs, an easy-to-use API, and a vibrant community support. To install PyTorch, we can use the following pip command:',
+  'OpenCV is a widely-used image processing library that allows us to read, process, and analyze images effortlessly. It supports various image processing techniques, such as image filtering, edge detection, and object detection. To install OpenCV, execute the following pip command:',
+  'Pandas is a feature-rich data manipulation library that helps us handle and analyze structured data with ease. In image processing tasks, we often need to deal with metadata related to images, such as image labels, file names, etc. Pandas can easily handle such data. To install pandas, run the following pip command:',
+  'torchvision is an extension of PyTorch specifically designed for working with image data. It provides many tools and preprocessing methods that allow us to prepare image data in a format suitable for deep learning models. To install torchvision, execute the following pip command:',
+];
+
+function changeText(index) {document.getElementById('textContainer').innerText = texts[index - 1];
+  
+  var buttons = document.getElementsByClassName('button');
+  for (var i = 0; i < buttons.length; i++) {buttons[i].classList.remove('active');
+    buttons[i].style.backgroundColor = '#ddd'; /* light gray */
+  }
+  
+  document.getElementById('btn' + index).classList.add('active');
+  document.getElementById('btn' + index).style.backgroundColor = '#ccc'; /* dark gray */
+}
+</script>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset, DataLoader</span><br></pre></td></tr></table></figure>
+</p><div class="tip"><br>作者: 微風</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-07-27</span><a class="tag" href="/categories/python/" title="python">python </a><i class="fa fa-tag"></i><a class="tag" href="/tags/code/" title="code">code </a><i class="fa fa-tag"></i><a class="tag" href="/tags/python/" title="python">python </a><i class="fa fa-tag"></i><a class="tag" href="/tags/ML/" title="ML">ML </a><i class="fa fa-tag"></i><a class="tag" href="/tags/MachineLearning/" title="MachineLearning">MachineLearning </a><span class="leancloud_visitors"></span><span>大約466個字, 1分鐘33秒讀完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/07/30/test_hide/" title="TTT">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/07/27/python_join/" title="python-join">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><!-- 在這裡插入代碼--><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(無標題)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要搜尋什麼..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
