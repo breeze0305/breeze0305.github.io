@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="zh-CN"><head><!-- Google Analytics Tracking Code--><script async src="https://www.googletagmanager.com/gtag/js?id=G-8FN9LPZ6K5"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-8FN9LPZ6K5');
+</script><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="微風"><title>ML-overfitting · 微風</title><meta name="description" content="過擬合 (Overfitting): 從基礎到深入  過擬合是機器學習和統計建模中的一個常見問題。當一個模型在訓練數據上表現得特別好，但在未見過的數據上表現不佳時，我們就說該模型出現了過擬合。本文旨在深入探討過擬合的成因、檢測方法以及如何避免或緩解過擬合。
+
+過分的去 fitting trainin"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/image0.gif"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="/js/clipboard.min.js"></script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首頁</a></li><li> <a href="/archives">檔案</a></li><li> <a href="/tags">標籤</a></li><li> <a href="/about">關於我...</a></li><li> <a href="/Artwork">作品</a></li><li> <a href="/update">更新日誌</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/userlogo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/userlogo.webp" style="width:220px;" alt="favicon"><h3 title=""><a href="/">微風</a></h3><div class="description"><p>一個在師範大學讀電機的剪輯師<br>未修教育學程在補習班當老師和編講義</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/breeze0305"><i class="fa fa-github"></i></a></li><li><a href="mailto:benfeng99@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://twitter.com/Breeze0305"><i class="fa fa-twitter"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/breeze0305_edit/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/boku_kaze/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?viewas=100000686899395&amp;id=100011958690193"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" rel="noopener" href="https://discordapp.com/users/561426930671288330"><i class="fa fa-gamepad"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> 微風</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div><script src="/js/copy-code.js"></script></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>ML-overfitting</a></h3></div><div class="post-content"><p><br>
+<span id="more"></span>
+
+<h1 id="過擬合 -Overfitting- 從基礎到深入"><a href="# 過擬合 -Overfitting- 從基礎到深入" class="headerlink" title="過擬合 (Overfitting): 從基礎到深入"></a>過擬合 (Overfitting): 從基礎到深入 </h1><p> 過擬合是機器學習和統計建模中的一個常見問題。當一個模型在訓練數據上表現得特別好，但在未見過的數據上表現不佳時，我們就說該模型出現了過擬合。本文旨在深入探討過擬合的成因、檢測方法以及如何避免或緩解過擬合。</p>
+<blockquote>
+<p>過分的去 fitting training data，使得模型失去了彈性和適應性。</p>
+</blockquote>
+<h2 id="1- 什麼是過擬合？"><a href="#1- 什麼是過擬合？" class="headerlink" title="1. 什麼是過擬合？"></a>1. 什麼是過擬合？</h2><p>想像你正在參加一場考試，你僅僅死記硬背了所有的練習題答案，而不是理解背後的概念。當考試中出現了與練習題相似但不完全相同的問題時，你可能會發現自己無法回答。這就是過擬合的現實生活例子。</p>
+<p>在機器學習的語境中，過擬合指的是模型過於複雜，以至於它不僅學到了數據的真實模式，還學到了數據中的噪聲。</p>
+<p><img src="https://cdn.discordapp.com/attachments/1096846651697659934/1141125781737721986/1.png" alt="Underfitting, Good fitting, Overfitting"></p>
+<h2 id="2- 過擬合的成因"><a href="#2- 過擬合的成因" class="headerlink" title="2. 過擬合的成因"></a>2. 過擬合的成因 </h2><p> 以下是導致過擬合的一些常見原因：</p>
+<ol>
+<li><strong>模型太複雜</strong>：例如，使用高階多項式來擬合線性數據。</li>
+<li><strong>訓練數據太少</strong>：當可用的數據量太少時，模型可能會學到數據中的特定噪聲，而不是真正的模式。</li>
+<li><strong>數據噪聲</strong>：如果訓練數據包含大量的錯誤或不準確的標籤，模型可能會學到這些誤差。</li>
+</ol>
+<h2 id="3- 如何檢測過擬合？"><a href="#3- 如何檢測過擬合？" class="headerlink" title="3. 如何檢測過擬合？"></a>3. 如何檢測過擬合？</h2><ol>
+<li><strong>訓練集和驗證集的性能差異</strong>：當模型在訓練集上表現得很好，但在驗證集上表現得比較差時，這可能是過擬合的跡象。</li>
+<li><strong>學習曲線</strong>：隨著訓練次數的增加，如果訓練誤差持續下降，但驗證誤差開始上升，則可能是過擬合。</li>
+</ol>
+<h2 id="4- 如何避免或緩解過擬合？"><a href="#4- 如何避免或緩解過擬合？" class="headerlink" title="4. 如何避免或緩解過擬合？"></a>4. 如何避免或緩解過擬合？</h2><ol>
+<li><strong>增加數據量</strong>：更多的數據可以幫助模型學到真正的模式，而不是噪聲。</li>
+<li><strong>簡化模型</strong>：例如，選擇一個較簡單的算法或減少特徵的數量。</li>
+<li><strong>正則化</strong>：正則化技術可以防止模型權重變得過大，從而緩解過擬合。</li>
+<li><strong>早停</strong>：當觀察到驗證誤差開始上升時，可以提前停止訓練。</li>
+<li><strong>交叉驗證</strong>：使用交叉驗證可以得到模型在不同子集上的性能，從而更好地估計其在未見過的數據上的性能。</li>
+</ol>
+<h2 id="總結"><a href="# 總結" class="headerlink" title="總結"></a>總結 </h2><p> 過擬合是機器學習領域中的一個重要問題，但透過對過擬合的理解和適當的技術，我們可以有效地避免或緩解它。在設計和訓練模型時，我們應該始終保持警惕，確保我們的模型不僅在訓練數據上表現得好，而且在真實世界的數據上也能夠做得好。</p>
+<h2 id="參考資料"><a href="# 參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><iframe src="//player.bilibili.com/player.html?aid=485011053&bvid=BV1DT411H7ph&cid=1096872447&page=1&autoplay=0&t=481" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="display: block; margin: 0 auto; width: 50vw; height: 28.125vw;"></iframe>
+<center> ▲ 強化學習 - 過擬合狀態</center>
+
+<br>
+
+<div style="text-align: center;">
+    <h3><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10278254">[Day 24] 機器學習 - 不能忽視的過擬合與欠擬合</a></h3>
+</div>
+
+
+<br>
+<center><img src="/images/image0.gif" width = ""height =""></center></p><div class="tip"><br>作者: 微風</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-08-16</span><a class="tag" href="/categories/python/" title="python">python </a><i class="fa fa-tag"></i><a class="tag" href="/tags/code/" title="code">code </a><span class="leancloud_visitors"></span><span>大約827個字, 2分鐘45秒讀完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/07/30/python_exePackage/" title="Python-exe Package">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><!-- 在這裡插入代碼--><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(無標題)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要搜尋什麼..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
