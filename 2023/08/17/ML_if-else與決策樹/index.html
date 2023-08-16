@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="zh-CN"><head><!-- Google Analytics Tracking Code--><script async src="https://www.googletagmanager.com/gtag/js?id=G-8FN9LPZ6K5"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-8FN9LPZ6K5');
+</script><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="微風"><title>ML-if else VS 決策樹 · 微風</title><meta name="description" content="p {line-height: 50px;}
+
+
+
+
+ 機器學習中的決策樹和一般的「if-else」判斷的差異 
+ 自動生成 vs 手工定義 ：
+
+ 決策樹 ：是通過數據學習生成的。給定一組訓練數據和標籤，決策樹學習算法會嘗試找出最佳的方式來分割數據，從而做出預測或分類。
+if-else：這些是由程"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/image0.gif"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="/js/clipboard.min.js"></script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首頁</a></li><li> <a href="/archives">檔案</a></li><li> <a href="/tags">標籤</a></li><li> <a href="/about">關於我...</a></li><li> <a href="/Artwork">作品</a></li><li> <a href="/update">更新日誌</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/userlogo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/userlogo.webp" style="width:220px;" alt="favicon"><h3 title=""><a href="/">微風</a></h3><div class="description"><p>一個在師範大學讀電機的剪輯師<br>未修教育學程在補習班當老師和編講義</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/breeze0305"><i class="fa fa-github"></i></a></li><li><a href="mailto:benfeng99@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://twitter.com/Breeze0305"><i class="fa fa-twitter"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/breeze0305_edit/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/boku_kaze/"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?viewas=100000686899395&amp;id=100011958690193"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" rel="noopener" href="https://discordapp.com/users/561426930671288330"><i class="fa fa-gamepad"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> 微風</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div><script src="/js/copy-code.js"></script></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>ML-if else VS 決策樹</a></h3></div><div class="post-content"><p><!-- 調整 html 文字行距的 css-->
+<style>
+p {line-height: 50px;}
+</style>
+
+
+<p><img src="https://cdn.discordapp.com/attachments/1096846651697659934/1141408836297703565/1.png" alt="Decision Tree VS if-else"></p>
+<h2 id="機器學習中的決策樹和一般的「if-else」判斷的差異"><a href="# 機器學習中的決策樹和一般的「if-else」判斷的差異" class="headerlink" title="機器學習中的決策樹和一般的「if-else」判斷的差異"></a> 機器學習中的決策樹和一般的「if-else」判斷的差異 </h2><ol>
+<li><p><strong> 自動生成 vs 手工定義 </strong>：</p>
+<ul>
+<li><strong> 決策樹 </strong>：是通過數據學習生成的。給定一組訓練數據和標籤，決策樹學習算法會嘗試找出最佳的方式來分割數據，從而做出預測或分類。</li>
+<li><strong>if-else</strong>：這些是由程式設計師或專家基於特定邏輯或規則手動定義的。</li>
+</ul>
+</li>
+<li><p><strong> 適應性 </strong>：</p>
+<ul>
+<li><strong> 決策樹 </strong>：能夠適應新的數據。如果您獲得新的數據，可以重新訓練決策樹來更好地適應這些數據。</li>
+<li><strong>if-else</strong>：除非程式設計師或專家手動修改，否則這些規則通常是固定的。</li>
+</ul>
+</li>
+<li><p><strong> 複雜性和解釋性 </strong>：</p>
+<ul>
+<li><strong> 決策樹 </strong>：可能會非常複雜，尤其是當訓練數據具有大量特徵或當樹深度非常深時。儘管如此，決策樹通常還是具有相對較好的解釋性，因為您可以看到每個分支和判斷條件。</li>
+<li><strong>if-else</strong>：規則的複雜性和解釋性完全取決於程式設計師的實現。</li>
+</ul>
+</li>
+<li><p><strong> 泛化能力 </strong>：</p>
+<ul>
+<li><strong> 決策樹 </strong>：如果不進行適當的修剪或限制其深度，決策樹可能會對訓練數據過度擬合，這將導致其在新數據上的表現不佳。</li>
+<li><strong>if-else</strong>：其泛化能力完全取決於如何定義規則。固定的規則可能在某些情況下效果很好，但在其他情況下可能不夠靈活。</li>
+</ul>
+</li>
+<li><p><strong> 效率 </strong>：</p>
+<ul>
+<li><strong> 決策樹 </strong>：建樹過程可能需要較長的時間，特別是對於大型數據集。但一旦樹被建立，預測速度通常非常快。</li>
+<li><strong>if-else</strong>：判斷的效率取決於規則的數量和複雜性。</li>
+</ul>
+</li>
+</ol>
+<br>
+<center><img src="/images/image0.gif" width = ""height =""></center></p><div class="tip"><br>作者: 微風</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-08-17</span><a class="tag" href="/categories/python/" title="python">python </a><i class="fa fa-tag"></i><a class="tag" href="/tags/code/" title="code">code </a><i class="fa fa-tag"></i><a class="tag" href="/tags/python/" title="python">python </a><i class="fa fa-tag"></i><a class="tag" href="/tags/ML/" title="ML">ML </a><i class="fa fa-tag"></i><a class="tag" href="/tags/MachineLearning/" title="MachineLearning">MachineLearning </a><span class="leancloud_visitors"></span><span>大約505個字, 1分鐘41秒讀完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/08/16/%E9%81%8E%E6%93%AC%E5%90%88/" title="ML-overfitting">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><!-- 在這裡插入代碼--><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(無標題)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要搜尋什麼..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
